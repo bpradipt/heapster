@@ -1,7 +1,7 @@
 {
 	"ImportPath": "k8s.io/heapster",
 	"GoVersion": "go1.6",
-	"GodepVersion": "v67",
+	"GodepVersion": "v74",
 	"Packages": [
 		"./..."
 	],
@@ -42,8 +42,8 @@
 		},
 		{
 			"ImportPath": "github.com/boltdb/bolt",
-			"Comment": "v1.0-113-g980670a",
-			"Rev": "980670afcebfd86727505b3061d8667195234816"
+			"Comment": "v1.2.1",
+			"Rev": "dfb21201d9270c1082d5fb0f07f500311ff72f18"
 		},
 		{
 			"ImportPath": "github.com/davecgh/go-spew/spew",
@@ -370,6 +370,10 @@
 			"Rev": "b5adcc2dcdf009d0391547edc6ecbaff889f5bb9"
 		},
 		{
+			"ImportPath": "golang.org/x/sys/unix",
+			"Rev": "076b546753157f758b316e59bcb51e6807c04057"
+		},
+		{
 			"ImportPath": "google.golang.org/api/cloudmonitoring/v2beta2",
 			"Rev": "40e8982bc18ef49b340c9da2c2bd9d49f94befcd"
 		},
@@ -399,6 +403,7 @@
 		},
 		{
 			"ImportPath": "gopkg.in/inf.v0",
+			"Comment": "v0.9.0",
 			"Rev": "3887ee99ecf07df5b447e9b00d9c0b2adaa9f3e4"
 		},
 		{
