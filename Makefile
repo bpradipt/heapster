@@ -11,9 +11,9 @@ deps:
 	go get github.com/tools/godep
 
 build: clean deps
-	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 godep go build ./...
-	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 godep go build -o heapster k8s.io/heapster/metrics
-	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 godep go build -o eventer k8s.io/heapster/events
+	GOOS=linux CGO_ENABLED=0 godep go build ./...
+	GOOS=linux CGO_ENABLED=0 godep go build -o heapster k8s.io/heapster/metrics
+	GOOS=linux CGO_ENABLED=0 godep go build -o eventer k8s.io/heapster/events
 
 sanitize:
 	hooks/check_boilerplate.sh
