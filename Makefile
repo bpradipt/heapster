@@ -7,6 +7,8 @@ FLAGS =
 SUPPORTED_KUBE_VERSIONS = "1.2.4"
 TEST_NAMESPACE = heapster-e2e-tests
 
+ARCH=$(shell uname -m)
+
 deps:
 	go get github.com/tools/godep
 
@@ -32,7 +34,7 @@ test-integration: clean deps build
 container: build
 	cp heapster deploy/docker/heapster
 	cp eventer deploy/docker/eventer
-	docker build -t $(PREFIX)/heapster:$(TAG) deploy/docker/
+	docker build -t $(PREFIX)/heapster:$(TAG) -f deploy/docker/Dockerfile.$(ARCH) deploy/docker/
 
 grafana:
 	docker build -t $(PREFIX)/heapster_grafana:$(TAG) grafana/
