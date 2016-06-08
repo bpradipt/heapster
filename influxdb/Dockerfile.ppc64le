@@ -1,0 +1,20 @@
+FROM ppc64le/ubuntu:xenial
+MAINTAINER pradipta.banerjee@gmail.com
+
+# Install InfluxDB
+ENV INFLUXDB_VERSION 0.9.6
+
+ADD influxdb_0.9.6.1_ppc64el.deb /
+RUN dpkg -i /influxdb_0.9.6.1_ppc64el.deb  && \
+    rm /influxdb_0.9.6.1_ppc64el.deb
+
+ENV PATH=/opt/influxdb:$PATH
+
+ADD config.toml /etc/influxdb.toml
+
+# admin, http, udp, cluster, graphite, opentsdb, collectd
+EXPOSE 8083 8086 8086/udp 8088 2003 4242 25826
+
+VOLUME ["/data"]
+
+ENTRYPOINT ["influxd", "--config", "/etc/influxdb.toml"]
